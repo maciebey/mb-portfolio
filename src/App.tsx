@@ -1,24 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router';
+import { useNavigate } from "react-router-dom";
+// component
+import { ProjectDisplay } from './component'
+// style
 import './App.css';
+// data
+import { projectData } from './config'
 
 function App() {
+  const { id } = useParams<{ id: string }>();
+  const [projects] = useState(projectData)
+  const navigate = useNavigate();
+
+  useEffect(()=>{
+    if (id) {
+      // when id is set and the modal is open stop scroll
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+  }, [id])
+
+  const closeInfo = () => {
+    navigate(-1)
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>render {id}</div>
+      <ProjectDisplay projectData={projects}/>
+
+      <div className={`info ${id ? "": "hide"}`}>
+        <div className='project-card-large'>
+          <button onClick={closeInfo}>X</button>
+          <div>Hello {id}</div>
+        </div>
+      </div>
+      
     </div>
   );
 }

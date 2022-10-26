@@ -1,0 +1,29 @@
+.project-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.project-card {
+  color: black;
+  width: 50%; 
+}
+
+.project-card-inner {
+  background-color: #eee;
+  margin: 10px;
+  border-radius: 15px;
+  height: 450px;
+  padding: 15px;
+}
+
+.project-card-preview {
+  color: white;
+  height: 250px;
+  padding: 10px;
+  display: flex;
+  background-color: #191b1e;
+}
+
+.project-card-preview > div {
+  height: fit-content;
+}
