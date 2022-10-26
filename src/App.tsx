@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { useNavigate } from "react-router-dom";
 // component
-import { ProjectDisplay } from './component'
+import { Person, ProjectDisplay } from './component'
 // style
 import './App.css';
 // data
@@ -27,7 +27,7 @@ function App() {
   }
   return (
     <div className="App">
-      <div>render {id}</div>
+      <Person />
       <ProjectDisplay projectData={projects}/>
 
       <div className={`info ${id ? "": "hide"}`}>

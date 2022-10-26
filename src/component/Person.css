@@ -1,0 +1,34 @@
+.person-container {
+  display: flex;
+  margin: 20px 0;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg)
+  }
+  100% {
+    transform: rotate(360deg)
+  }
+}
+
+.person-image {
+  background: conic-gradient( from -45deg,
+    #b827fc 0%, #2c90fc 12.5%, #b8fd33 25%, #fec837 37.5%, #fd1892 50%,
+    #fec837 67.5%, #b8fd33 75%, #2c90fc 87.5%, #b827fc 100%);
+  padding: 5px;
+  border-radius: 1000px;
+  animation: spin 20s linear infinite;
+}
+
+.person-image > img {
+  border: 10px solid #282c34;
+  width: 200px;
+  border-radius: inherit;
+  display: block;
+  animation: spin 20s linear infinite reverse;
+}
+
+.person-details {
+  margin-left: 20px;
+}
