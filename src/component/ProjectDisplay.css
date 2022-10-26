@@ -1,6 +1,32 @@
+.project-header {
+  width: 100%;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  background-color: #282c34;
+  display: flex;
+  justify-content: center;
+}
+
+.project-header:not(.stuck) > .vis-on-stuck {
+  display: none;
+  visibility: hidden;
+}
+.project-header.stuck > .vis-on-stuck {
+  visibility: visible;
+}
+
 .project-container {
+  width: 100%;
+  background-color: #191b1e;
+}
+
+.project-container > div {
   display: flex;
   flex-wrap: wrap;
+  width: 100%;
+  max-width: 1000px;
+  margin: 20px auto;
 }
 
 .project-card {
