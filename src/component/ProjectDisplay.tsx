@@ -2,14 +2,40 @@ import { Link } from "react-router-dom";
 // style
 import './ProjectDisplay.css';
 // types
-import { project } from '../config'
+import { tags, project } from '../config'
 import { useLayoutEffect, useRef } from "react";
+
+const Tag = ({tag}:{tag:tags}) => {
+  let classNames = "tag ";
+  let logo, displayText;
+  if (tag === tags.TypeScript) {
+    classNames += "typescript";
+    logo = "logo192.png";
+    displayText = "TypeScript";
+  }
+  else if (tag === tags.React) {
+    classNames += "react";
+    logo = "logo192.png";
+    displayText = "React";
+  }
+  else {
+    classNames += "undef";
+    logo = "logo192.png";
+    displayText = `Undefined Tag: ${tag}`;
+  }
+
+  return (
+    <div className={classNames}><img src={`/${logo}`} />{displayText}</div>
+  )
+}
 
 type ProjectDisplayTypes = {
   projectData: project[]
 }
 const ProjectDisplay = ({projectData}:ProjectDisplayTypes) => {
   const stickyRef = useRef<HTMLDivElement>(null)
+
+  // we really need a :stuck css selector :'(
   useLayoutEffect(() => {
     let fixedTop = stickyRef.current!.offsetTop
     const fixedHeader = () => {
@@ -36,6 +62,7 @@ const ProjectDisplay = ({projectData}:ProjectDisplayTypes) => {
             <div>Placeholder</div>
           </div>
           <div>{pData.name}</div>
+          {pData.tags.length > 0 && <div className='project-tags'>{pData.tags.map((t)=><Tag tag={t} key={`${pData.name}_${t}`} />)}</div>}
           <div>{pData.description}</div>
           <Link to={`/${pData.name}`}>{pData.name}</Link>
         </div>

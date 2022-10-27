@@ -53,3 +53,32 @@
 .project-card-preview > div {
   height: fit-content;
 }
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.project-tags img {
+  height: 100%;
+}
+
+.project-tags > .tag {
+  margin: 5px 5px 0 0;
+  height: 20px;
+  display: flex;
+  padding: 3px 7px;
+  border-radius: 10px;
+}
+
+.project-tags > .typescript {
+  background-color: aquamarine;
+}
+
+.project-tags > .react {
+  background-color: cadetblue;
+}
+
+.project-tags > .undef {
+  background-color: peachpuff;
+}
