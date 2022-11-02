@@ -18,7 +18,8 @@ export const profileData: profile = {
 export enum tags {
   TypeScript = "TYPESCRIPT",
   React = "REACT",
-  ReactRedux = "REACTREDUX"
+  Redux = "REDUX",
+  Heroku = "HEROKU"
 }
 export type project = {
   name: string,
@@ -30,13 +31,13 @@ export const projectData: project[] = [
   {
     name: "One",
     image: "wave.png",
-    tags: [tags.TypeScript, tags.React, tags.ReactRedux],
+    tags: [tags.TypeScript, tags.React, tags.Redux],
     description: "big big yoshi"
   },
   {
     name: "Two",
     image: "mix.png",
-    tags: [tags.TypeScript, tags.React],
+    tags: [tags.TypeScript, tags.React, tags.Redux, tags.Heroku],
     description: "bigger big big yoshi"
   },
   {

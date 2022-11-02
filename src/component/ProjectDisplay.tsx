@@ -8,24 +8,38 @@ import { useEffect, useLayoutEffect, useRef, useState } from "react";
 const Tag = ({tag}:{tag:tags}) => {
   let classNames = "tag ";
   let logo, displayText;
-  if (tag === tags.TypeScript) {
-    classNames += "typescript";
-    logo = "logo192.png";
-    displayText = "TypeScript";
-  }
-  else if (tag === tags.React) {
-    classNames += "react";
-    logo = "logo192.png";
-    displayText = "React";
-  }
-  else {
-    classNames += "undef";
-    logo = "logo192.png";
-    displayText = `Undefined Tag: ${tag}`;
+  switch (tag) {
+    case tags.TypeScript:
+      classNames += "typescript";
+      logo = "ts.svg";
+      displayText = "TypeScript";
+      break;
+    case tags.React:
+      classNames += "react";
+      logo = "react.png";
+      displayText = "React";
+      break;
+    case tags.Redux:
+      classNames += "redux";
+      logo = "redux.svg";
+      displayText = "Redux";
+      break;
+    case tags.Heroku:
+      classNames += "heroku";
+      logo = "heroku.svg";
+      displayText = "Heroku";
+      break;
+    default:
+      classNames += "undef";
+      logo = "logo192.png";
+      displayText = `Undefined Tag: ${tag}`;
   }
 
   return (
-    <div className={classNames}><img src={`/${logo}`} />{displayText}</div>
+    <div className={classNames}>
+      <img src={`/icons/${logo}`} />
+      <div>{displayText}</div>
+    </div>
   )
 }
 

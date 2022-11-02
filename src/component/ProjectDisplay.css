@@ -74,15 +74,28 @@
   height: 20px;
   display: flex;
   padding: 3px 7px;
-  border-radius: 10px;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.project-tags > .tag > div{
+  padding: 0 5px;
 }
 
 .project-tags > .typescript {
-  background-color: aquamarine;
+  background-color: #3178c6;
 }
 
 .project-tags > .react {
-  background-color: cadetblue;
+  background-color: #20232a;
+}
+
+.project-tags > .redux {
+  background-color: #b9b9b9;
+}
+
+.project-tags > .heroku {
+  background-color: #6d46b2;
 }
 
 .project-tags > .undef {
