@@ -1,5 +1,6 @@
 .person-container {
   display: flex;
+  align-items: flex-start;
   margin: 20px 0;
   width: 100%;
   max-width: 1000px;

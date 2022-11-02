@@ -5,7 +5,7 @@ const Person = ({}:PersonProps) => {
   return (
     <div className='person-container'>
       <div className='person-image'>
-        <img src='/img/profile.jpg' />
+        <img src='/img/prof.jpg' alt='person lastname' />
       </div>
       <div className='person-details'>
         <h1>Person Lastname - Job Title</h1>
