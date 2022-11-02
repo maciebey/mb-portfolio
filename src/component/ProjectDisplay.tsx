@@ -76,7 +76,7 @@ const ProjectDisplay = ({projectData}:ProjectDisplayTypes) => {
       {projectData.map((pData)=> <div className='project-card' key={pData.name}>
         <div className='project-card-inner'>
           <div className='project-card-preview'>
-            <div>Placeholder</div>
+            <img src={`/img/${pData.image}`} />
           </div>
           <div>{pData.name}</div>
           {pData.tags.length > 0 && <div className='project-tags'>{pData.tags.map((t)=><Tag tag={t} key={`${pData.name}_${t}`} />)}</div>}

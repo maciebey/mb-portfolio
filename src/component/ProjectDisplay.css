@@ -20,14 +20,21 @@
 .project-container > div {
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
+  /* width: 100%; */
   max-width: 1000px;
   margin: 20px auto;
+  padding: 0 20px;
 }
 
 .project-card {
   color: black;
   width: 50%; 
+}
+
+@media screen and (max-width: 700px) {
+  .project-card {
+    width: 100%; 
+  }
 }
 
 .project-card-inner {
@@ -40,10 +47,13 @@
 
 .project-card-preview {
   color: white;
-  height: 250px;
-  padding: 10px;
+  width: 100%;
   display: flex;
   background-color: #191b1e;
+}
+
+.project-card-preview img{
+  width: 100%;
 }
 
 .project-card-preview > div {
