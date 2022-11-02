@@ -1,3 +1,20 @@
+/* About Types and Data */
+export type profile = {
+  name: string,
+  title: string,
+  deets: string[]
+}
+export const profileData: profile = {
+  name: "Macie Bey",
+  title: "Software Engineer",
+  deets: [
+    "Oh wow",
+    "Truely a beautiful site",
+    "Look at that rotating gradient wow"
+  ]
+}
+
+/* Project Types and Data */
 export enum tags {
   TypeScript = "TYPESCRIPT",
   React = "REACT",

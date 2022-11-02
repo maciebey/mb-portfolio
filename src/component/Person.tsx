@@ -1,7 +1,10 @@
+import { profile } from '../config';
 import './Person.css';
 
-type PersonProps = {}
-const Person = ({}:PersonProps) => {
+type PersonProps = {
+  profileData: profile
+}
+const Person = ({profileData}:PersonProps) => {
   return (
     <div className='person-container'>
       <div className='person-image'>
@@ -9,9 +12,7 @@ const Person = ({}:PersonProps) => {
       </div>
       <div className='person-details'>
         <h1>Person Lastname - Job Title</h1>
-        <p>Oh wow</p>
-        <p>Truely a beautiful site</p>
-        <p>Look at that rotating gradient wow</p>
+        {profileData.deets.map((deet) => <p>{deet}</p>)}
       </div>
     </div>
   )

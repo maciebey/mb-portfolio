@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router';
 import { useNavigate } from "react-router-dom";
 // component
@@ -6,11 +6,10 @@ import { Person, ProjectDisplay } from './component'
 // style
 import './App.css';
 // data
-import { projectData } from './config'
+import { profileData, projectData } from './config'
 
 function App() {
   const { id } = useParams<{ id: string }>();
-  const [projects] = useState(projectData)
   const navigate = useNavigate();
 
   useEffect(()=>{
@@ -27,8 +26,8 @@ function App() {
   }
   return (
     <div className="App">
-      <Person />
-      <ProjectDisplay projectData={projects}/>
+      <Person profileData={profileData} />
+      <ProjectDisplay projectData={projectData}/>
 
       <div className={`info ${id ? "": "hide"}`}>
         <div className='project-card-large'>
