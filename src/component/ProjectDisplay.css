@@ -8,12 +8,8 @@
   justify-content: center;
 }
 
-.project-header:not(.stuck) > .vis-on-stuck {
-  display: none;
-  visibility: hidden;
-}
-.project-header.stuck > .vis-on-stuck {
-  visibility: visible;
+.project-header h2 {
+  margin: 8px 0 10px 0;
 }
 
 .project-container {

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import './ProjectDisplay.css';
 // types
 import { tags, project } from '../config'
-import { useLayoutEffect, useRef } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 
 const Tag = ({tag}:{tag:tags}) => {
   let classNames = "tag ";
@@ -33,16 +33,34 @@ type ProjectDisplayTypes = {
   projectData: project[]
 }
 const ProjectDisplay = ({projectData}:ProjectDisplayTypes) => {
+  const target = "Person Lastname - "
+  const [isStuck, setIsStuck] = useState(false);
+  const [stringy, setStringy] = useState("")
   const stickyRef = useRef<HTMLDivElement>(null)
+
+  useEffect(()=>{
+    if(isStuck && stringy !== target) {
+      setTimeout(() => {
+        setStringy(s => {
+          const nextChar = target[s.length]
+          return s + nextChar
+        });
+      }, 50);
+    } else if (!isStuck && stringy !== "") {
+      setTimeout(() => {
+        setStringy(s => s.substring(0, s.length-1));
+      }, 30);
+    }
+  },[isStuck, stringy])
 
   // we really need a :stuck css selector :'(
   useLayoutEffect(() => {
     let fixedTop = stickyRef.current!.offsetTop
     const fixedHeader = () => {
       if (window.pageYOffset > fixedTop) {
-        stickyRef.current!.classList.add('stuck')
+        setIsStuck(true)
       } else {
-        stickyRef.current!.classList.remove('stuck')
+        setIsStuck(false)
       }
     }
     window.addEventListener('scroll', fixedHeader)
@@ -50,9 +68,8 @@ const ProjectDisplay = ({projectData}:ProjectDisplayTypes) => {
 
   return (
     <>
-    <div ref={stickyRef} className='project-header'>
-      <h2 className="vis-on-stuck">Person Lastname&nbsp;-&nbsp;</h2>
-      <h2>Public Portfolio</h2>
+    <div ref={stickyRef} className={`project-header ${isStuck ? "stuck" : ""}`}>
+      <h2>{stringy}Public Portfolio</h2>
     </div>
     <div className='project-container'>
       <div>
