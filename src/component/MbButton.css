@@ -1,0 +1,31 @@
+.mb-button {
+    display: inline-block;
+    margin: 2px 5px;
+    padding: 3px 5px;
+    border-radius: 3px;
+}
+
+.mb-button a {
+    display: flex;
+}
+
+.mb-button img {
+    width: 20px;
+    height: 20px;
+}
+
+.mb-button a > div {
+    padding-left: 5px;
+}
+
+.mb-button.GH  {
+    background-color: aquamarine;
+}
+
+.mb-button.LI  {
+    background-color: rgb(136, 127, 255);
+}
+
+.mb-button.A  {
+    background-color: rgb(255, 163, 127);
+}

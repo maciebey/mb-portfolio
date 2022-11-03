@@ -1,4 +1,5 @@
 import { profile } from '../config';
+import { MbButton } from './'
 import './Person.css';
 
 type PersonProps = {
@@ -13,6 +14,8 @@ const Person = ({profileData}:PersonProps) => {
       <div className='person-details'>
         <h1>{profileData.name} - {profileData.title}</h1>
         {profileData.deets.map((deet) => <p key={deet}>{deet}</p>)}
+        <MbButton type='GH' text='gh link' link={profileData.links.github} />
+        <MbButton type='LI' text='li link' link={profileData.links.linkedin} />
       </div>
     </div>
   )
