@@ -1,7 +1,7 @@
 .person-container {
   display: flex;
   align-items: flex-start;
-  margin: 20px 0;
+  margin: 40px 0 70px;
   width: 100%;
   max-width: 1000px;
 }
