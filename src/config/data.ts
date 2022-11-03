@@ -12,9 +12,7 @@ export const profileData: profile = {
   name: "Macie Bey",
   title: "Software Engineer",
   deets: [
-    "Oh wow",
-    "Truely a beautiful site",
-    "Look at that rotating gradient wow"
+    "Workin' up 'n down the stack. Soon to be located in DC metropolitan area."
   ],
   links: {
     github: "https://github.com/maciebey/",
@@ -57,8 +55,8 @@ export const projectData: project[] = [
     ],
     liveLinks: [
       {
-        text: "gw.mbdv.io",
-        url: "http://gw.mbdv.io/"
+        text: "Live",
+        url: "https://maciebey.github.io/great-wave/"
       }
     ]
   },

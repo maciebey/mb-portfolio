@@ -4,6 +4,7 @@
   margin: 40px 0 70px;
   width: 100%;
   max-width: 1000px;
+  justify-content: center;
 }
 
 @keyframes spin {

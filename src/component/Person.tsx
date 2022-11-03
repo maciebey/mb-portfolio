@@ -14,8 +14,8 @@ const Person = ({profileData}:PersonProps) => {
       <div className='person-details'>
         <h1>{profileData.name} - {profileData.title}</h1>
         {profileData.deets.map((deet) => <p key={deet}>{deet}</p>)}
-        <MbButton type='GH' text='gh link' link={profileData.links.github} />
-        <MbButton type='LI' text='li link' link={profileData.links.linkedin} />
+        <MbButton type='GH' text='My Github' link={profileData.links.github} />
+        <MbButton type='LI' text='Connect on LinkedIn' link={profileData.links.linkedin} />
       </div>
     </div>
   )

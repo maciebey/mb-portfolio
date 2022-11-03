@@ -7,6 +7,9 @@
 
 .mb-button a {
     display: flex;
+    white-space: nowrap;
+    text-decoration: none;
+    color: black;
 }
 
 .mb-button img {
@@ -19,7 +22,7 @@
 }
 
 .mb-button.GH  {
-    background-color: aquamarine;
+    background-color: #b7b7b7;
 }
 
 .mb-button.LI  {
