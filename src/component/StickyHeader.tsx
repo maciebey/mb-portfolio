@@ -32,10 +32,10 @@ const StickyHeader = ({profileData}:StickyHeaderTypes) => {
   // we really need a :stuck css selector :'(
   useLayoutEffect(() => {
     if (!stickyRef.current || !stickyRef.current.parentElement) return;
-    const fixedTop = stickyRef.current.offsetTop
+    // const fixedTop = stickyRef.current.offsetTop
     const appElement = stickyRef.current.parentElement
     const fixedHeader = () => {
-      if (appElement.scrollTop > fixedTop) {
+      if (appElement.scrollTop > 200) {//fixedTop) {
         setIsStuck(true)
       } else {
         setIsStuck(false)
