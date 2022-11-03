@@ -10,6 +10,7 @@ body {
 html, body, #root {
   background-color: #282c34;
   height: 100vh;
+  overflow: hidden;
 }
 
 code {
