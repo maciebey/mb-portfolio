@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useParams } from 'react-router';
 import { useNavigate } from "react-router-dom";
 // component
-import { Person, ProjectDisplay } from './component'
+import { Person, ProjectDisplay, StickyHeader } from './component'
 // style
 import './App.css';
 // data
@@ -27,7 +27,8 @@ function App() {
   return (
     <div className="App">
       <Person profileData={profileData} />
-      <ProjectDisplay projectData={projectData}/>
+      <StickyHeader profileData={profileData} />
+      <ProjectDisplay projectData={projectData} />
 
       <div className={`info ${id ? "": "hide"}`}>
         <div className='project-card-large'>
