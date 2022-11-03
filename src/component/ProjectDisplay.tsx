@@ -1,8 +1,9 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 // style
 import './ProjectDisplay.css';
 // types
 import { tags, project } from '../config';
+import { MbButton } from './'
 
 
 const Tag = ({tag}:{tag:tags}) => {
@@ -56,10 +57,18 @@ const ProjectDisplay = ({projectData}:ProjectDisplayTypes) => {
             <img src={`/img/${pData.image}`} alt={`preview of site ${pData.name}`} />
           </div>
           <div className='project-card-details'>
-            <div>{pData.name}</div>
+            <h2>{pData.name}</h2>
             {pData.tags.length > 0 && <div className='project-tags'>{pData.tags.map((t)=><Tag tag={t} key={`${pData.name}_${t}`} />)}</div>}
-            <div>{pData.description}</div>
-            <Link to={`/${pData.name}`}>{pData.name}</Link>
+            <p>{pData.description}</p>
+            <div className='project-card-links'>
+            {pData.ghLinks.map((ghLink) =>
+              <MbButton type="GH" text={ghLink.text} link={ghLink.url} />
+            )}
+            {pData.liveLinks && pData.liveLinks.map((liLink) => 
+              <MbButton type="A" text={liLink.text} link={liLink.url} />
+            )}
+            </div>
+            {/* <Link to={`/${pData.name}`}>{pData.name}</Link> */}
           </div>
         </div>
       </div>)}
