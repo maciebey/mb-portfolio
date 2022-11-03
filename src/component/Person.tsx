@@ -12,7 +12,7 @@ const Person = ({profileData}:PersonProps) => {
       </div>
       <div className='person-details'>
         <h1>{profileData.name} - {profileData.title}</h1>
-        {profileData.deets.map((deet) => <p>{deet}</p>)}
+        {profileData.deets.map((deet) => <p key={deet}>{deet}</p>)}
       </div>
     </div>
   )
