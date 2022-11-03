@@ -22,42 +22,51 @@
   flex-wrap: wrap;
   /* width: 100%; */
   max-width: 1000px;
-  margin: 50px auto;
+  margin: 25px auto 50px;
   padding: 0 20px;
 }
 
 .project-card {
   color: black;
-  width: 50%; 
+  width: 100%; 
 }
 
 @media screen and (max-width: 700px) {
-  .project-card {
-    width: 100%; 
+  .project-card-inner {
+    flex-direction: column;
+  }
+
+  .project-card-details {
+    padding: 15px 0 0 0 !important;
   }
 }
 
 .project-card-inner {
   background-color: #eee;
-  margin: 10px;
+  margin: 0 10px 30px;
   border-radius: 15px;
-  height: 450px;
   padding: 15px;
+  display: flex;
+  align-items: flex-start;
 }
 
 .project-card-preview {
   color: white;
-  width: 100%;
   display: flex;
   background-color: #191b1e;
+  flex: 1 0 40%;
+  border-radius: 15px;
+  box-shadow: 3px 4px 5px #191b1e91;
 }
 
 .project-card-preview img{
   width: 100%;
+  border-radius: 15px;
 }
 
-.project-card-preview > div {
-  height: fit-content;
+.project-card-details {
+  flex: 1 1 60%;
+  padding: 0 15px;
 }
 
 .project-tags {

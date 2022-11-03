@@ -55,10 +55,12 @@ const ProjectDisplay = ({projectData}:ProjectDisplayTypes) => {
           <div className='project-card-preview'>
             <img src={`/img/${pData.image}`} alt={`preview of site ${pData.name}`} />
           </div>
-          <div>{pData.name}</div>
-          {pData.tags.length > 0 && <div className='project-tags'>{pData.tags.map((t)=><Tag tag={t} key={`${pData.name}_${t}`} />)}</div>}
-          <div>{pData.description}</div>
-          <Link to={`/${pData.name}`}>{pData.name}</Link>
+          <div className='project-card-details'>
+            <div>{pData.name}</div>
+            {pData.tags.length > 0 && <div className='project-tags'>{pData.tags.map((t)=><Tag tag={t} key={`${pData.name}_${t}`} />)}</div>}
+            <div>{pData.description}</div>
+            <Link to={`/${pData.name}`}>{pData.name}</Link>
+          </div>
         </div>
       </div>)}
       </div>
